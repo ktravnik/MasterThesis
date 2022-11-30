@@ -1,0 +1,17 @@
+{
+    "description": "",
+    "parameters": [
+        {
+            "label": "",
+            "parameter": "",
+            "default":"",
+            "description":"",
+            "_comment": "type can be one of ['string','numeric','options']. If 'options', it will be one of the string in the 'options' field",
+            "type":"new_version/main.py",
+            "options": [
+                "option1",
+                "option2"
+            ]
+        }
+    ]
+}

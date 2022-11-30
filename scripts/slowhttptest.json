@@ -1,0 +1,108 @@
+{
+    "description": "SlowHttpTest",
+    "detail_description": "SlowHTTPTest is a highly configurable tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP connections in different ways.\n\nUse it to test your web server for DoS vulnerabilites, or just to figure out how many concurrent connections it can handle. SlowHTTPTest works on majority of Linux platforms, OS X and Cygwin - a Unix-like environment and command-line interface for Microsoft Windows, and comes with a Dockerfile to make things even easier.\n\nCheck out Wiki for installation and usage details.\n\nLatest official image is available at Docker Hub: docker pull shekyan/slowhttptest:latest",
+    "post_process": {
+        "cmd": "",
+        "download": [
+            "SlowHttpTest.csv",
+            "SlowHttpTest.html"
+        ]
+
+    },
+        "params": [
+            {
+                "label": "Attack",
+                "description":"H = Slowloris, B = Slow Body, R = range attack, X = slow read",
+                "type":"options",
+                "options":[
+                    "-H",
+                    "-B",
+                    "-R",
+                    "-X"
+                ],
+                "required": true
+            },
+            {
+                "label": "Connections",
+                "prefix": "-c",
+                "description":"Target number of connections (50)",
+                "type":"numeric",
+                "required": true,
+                "default": 50
+            },
+            {
+                "label": "Interval",
+                "prefix": "-i",
+                "description":"Interval between followup data in seconds (10)",
+                "type":"numeric",
+                "default": "10"
+            },
+            {
+                "label": "Duration of the attack",
+                "prefix": "-l",
+                "description":"Target test length in seconds (240)",
+                "type":"numeric",
+                "default": 240
+            },
+            {
+                "label": "Rate",
+                "prefix": "-r",
+                "description":"Connections per seconds (50)",
+                "type":"numeric",
+                "default": 50
+            },
+            {
+                "label": "Content-Length header",
+                "prefix": "-s",
+                "description":"Value of Content-Length header if needed (4096)",
+                "type":"numeric",
+                "default": 4096
+            },
+            {
+                "label": "Verb",
+                "prefix": "-t",
+                "description":"Verb to use in request, default to GET for slow headers and response and to POST for slow body",
+                "type":"string",
+                "default": ""
+            },
+            {
+                "label": "URL",
+                "prefix": "-u",
+                "description":"Absolute URL of target (http://localhost/)",
+                "type":"string",
+                "default": "http://localhost",
+                "target": true
+            },
+            {
+                "label": "Max length",
+                "prefix": "-x",
+                "description":"Max length of each randomized name/value pair of followup data per tick, e.g. -x 2 generates X-xx: xx for header or &xx=xx for body, where x is random character (32)",
+                "type":"numeric"
+            },
+            {
+                "label": "Content-type header",
+                "prefix": "-f",
+                "description":"Value of Content-type header (application/x-www-form-urlencoded)",
+                "type":"string"
+            },
+            {
+                "label": "Accept header",
+                "prefix": "-m",
+                "description":"Value of Accept header (text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5)",
+                "type":"string"
+            },
+            {
+                "label": "Statistics",
+                "value": "-g",
+                "description":"Generate statistics with socket state changes",
+                "type":"string"
+            },
+            {
+                "label": "File",
+                "prefix": "-o",
+                "value": "SlowHttpTest",
+                "description":"Save statistics output in file.html and file.csv (-g required)",
+                "type":"string"
+            }
+        ]
+    }

@@ -1,0 +1,69 @@
+{
+"description": "SlowDoSGen",
+"detail_description": "The SlowDoSGen.py Python script is a generator of Slowcomm and Slow Next slow DoS attacks used to deny service on application layer protocols. This is done by using sockets to connect the attacker's computer to the targeted server. \n \nMore information can be found in the bachelor thesis:\nRICHTER, Dominik. Slow rate DoS attacks independent of the application layer protocol. Brno, 2020. Bachelors thesis. University of Technology in Brno, Faculty of Electrical Engineering and Communication Technology, Department of Telecommunications. Thesis supervisor Marek Sikora.",
+    "params": [
+        {
+            "label": "Attack",
+            "description":"C = Slowcomm OR N = Slow Next",
+            "prefix": "-a",
+            "type":"options",
+            "options":[
+                "C",
+                "N"
+            ],
+            "required": true
+        },
+        {
+            "label": "IP address",
+            "prefix": "-ip",
+            "description":"Target IP address or URL",
+            "type":"string",
+            "required": true,
+            "default": "192.168.1.1"
+        },
+        {
+            "label": "Connection",
+            "prefix": "-c",
+            "description":"Number of connections to be established",
+            "type":"numeric",
+            "required": true,
+            "default": "10"
+        },
+        {
+            "label": "Port",
+            "prefix": "-p",
+            "description":"destination port",
+            "type":"numeric",
+            "required": true,
+            "default": "80"
+        },
+        {
+            "label": "Payload",
+            "prefix": "-l",
+            "description":"Load file with custom payload (enter name of file)",
+            "type":"string"
+        },
+        {
+            "label": "Thread count",
+            "prefix": "-tc",
+            "description":"Number of threads to create (for Slow Next only)",
+            "type":"numeric",
+            "default": 5
+        },
+        {
+            "label": "Timeout",
+            "prefix": "-t",
+            "description":"Timeout sets how often are requests sent in cycle (for both attacks, by Slow Next max is 5 sec - see persistent connection)",
+            "type":"numeric",
+            "max":"5",
+            "default": 1
+        },
+        {
+            "label": "Timeout 2",
+            "prefix": "-t2",
+            "description":"timeout_2 sets how quickly are the threads started after each other (for Slow Next only)",
+            "type":"numeric",
+            "default": 1
+        }
+    ]
+}

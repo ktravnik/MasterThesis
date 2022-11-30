@@ -1,0 +1,43 @@
+{
+    "description": "Slow Loris",
+    "detail_description": "Slowloris is a type of denial of service attack tool invented by Robert \"RSnake\" Hansen which allows a single machine to take down another machine's web server with minimal bandwidth and side effects on unrelated services and ports. \n\nExample: \n \npython slowloris.py www.example.com 80 100 10\n \n80 is the port number\n100 is total number of socket to create\n10 is the timer period to check for open socket and create any",
+    "exec": "slowLoris.py",
+    "params": [
+        {
+            "label": "IP address",
+            "description":"IP Address of the target",
+            "type":"string",
+            "required": true,
+            "default": "192.168.1.1"
+        },
+        {
+            "label": "Port",
+            "description":"Port",
+            "type":"string",
+            "required": true,
+            "default": "80"
+        },
+        {
+            "label": "Socket count",
+            "description":"Socket count",
+            "type":"numeric",
+            "required": true,
+            "default": 5
+        },
+        {
+            "label": "Timer",
+            "description":"Timer",
+            "type":"string",
+            "required": true,
+            "default": 1
+        }
+        ,
+        {
+            "label": "Use SSL",
+            "description":"Use SSL",
+            "type":"numeric",
+            "required": true,
+            "default": 0
+        }
+    ]
+}

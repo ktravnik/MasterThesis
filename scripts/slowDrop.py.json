@@ -1,0 +1,44 @@
+{
+    "description": "SlowDrop",
+    "detail_description": "implementation by Pavel Mazanek\nThis software is part of a diploma thesis and should be used for academic/research purposes ONLY.\nMalicious use of this software is prohibited and the author of this software takes no legal responsibility should it be used maliciously.\n\n About\n\nSlowDrop is a slow DoS attack (SDA) first introduced in 2019 by Enrico Cambiaso https://doi.org/10.1016/j.comnet.2019.01.007.\nThis novel threat uses packet dropping (hence it's name) as a means to achieve DoS state on the target.",
+        "params": [
+            {
+                "label": "URL",
+                "description":"GET request for victim URL (largest possible file)",
+                "prefix": "-url",
+                "type":"string",
+                "required": true
+            },
+            {
+                "label": "Number of threads",
+                "prefix": "-t",
+                "description":"Number of threads generating GET requests - increase according to your HW capabilities and TCP connection limit of target",
+                "type":"numeric",
+                "required": true,
+                "default": "20"
+            },
+            {
+                "label": "Random delay",
+                "prefix": "-tgd",
+                "description":"Random delay between generating new threads. (upper range float value in seconds",
+                "type":"numeric",
+                "required": true,
+                "default": 3
+            },
+            {
+                "label": "Delay",
+                "prefix": "-gn",
+                "description":"Generate new request after previous completed in X seconds - low values may increase risk of detection",
+                "type":"numeric",
+                "default": 30
+            },
+            {
+                "label": "Drop rate",
+                "prefix": "-d",
+                "description":"Drop rate -- of incoming HTTP traffic - float value between 0.0 and 1.0 (0.40 default)",
+                "type":"numeric",
+                "max":"1",
+                "default": 0.40
+            }
+        ]
+    }
