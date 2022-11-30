@@ -2,7 +2,7 @@
 
 ## Libraries that need to be installed:
 - psutil (pip install psutil)
-- request (pip install request)
+- requests (pip install requests)
 
 ## Adding a script to the generator
 - Create the $nameofscript.json file and save it in the scripts folder.
